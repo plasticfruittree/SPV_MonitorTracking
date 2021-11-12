@@ -65,4 +65,4 @@ since it value add for all parties.
 
 This is an educational project to learning different technologies so getting MVC for each objective. Oracle FlexCub has a similar product. 
 
-# 2.0 SETTING UP A MYSQL DATABASE
+## 2.0 SETTING UP A MYSQL DATABASE
