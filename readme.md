@@ -54,7 +54,7 @@ The main aim of this project is to build a web application with dashboard to mon
 2. How should MySQL be setup to support the project?
 3. How do build an API to provide functionalities to the financial institutions?
 
-### 1.6 SIGNIFICANCE OF THE PROJECT
+### 1.5 SIGNIFICANCE OF THE PROJECT
 
 This platform will remove the bottlenecks of Excel files. It makes monitoring and altering pools more easily while alerting all parties. The platform is profitable
 since it value add for all parties.  
