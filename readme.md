@@ -61,7 +61,7 @@ since it value add for all parties.
 
 [How a loan pool works](https://docs.oracle.com/cd/E86273_01/html/SZ/SZ02_Overview.htm)
 
-### 1.7 SCOPE OF THE PROJECT
+### 1.6 SCOPE OF THE PROJECT
 
 This is an educational project to learning different technologies so getting MVC for each objective. Oracle FlexCub has a similar product. 
 
