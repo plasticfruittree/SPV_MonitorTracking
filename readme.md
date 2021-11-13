@@ -65,4 +65,8 @@ since it value add for all parties.
 
 This is an educational project to learning different technologies so getting MVC for each objective. Oracle FlexCub has a similar product. 
 
-## 2.0 SETTING UP A MYSQL DATABASE
+## 2.0 Build modules to support functionalities in C++
+
+### 2.1 Interest Rate Conversions 
+There was a python project that would take user inputs for the decimal amount and interest rate type. I want to extend
+the scripts to handle inputs from the database instead.
