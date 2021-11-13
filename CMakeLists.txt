@@ -3,4 +3,4 @@ project(SPV_MonitorTracking)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(SPV_MonitorTracking main.cpp)
+add_executable(SPV_MonitorTracking main.cpp modules/interest_rate_conversions.cpp)

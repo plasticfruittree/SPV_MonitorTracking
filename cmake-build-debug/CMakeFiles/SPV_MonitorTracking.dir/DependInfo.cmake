@@ -8,9 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/SPV_MonitorTracking/main.cpp" "D:/SPV_MonitorTracking/cmake-build-debug/CMakeFiles/SPV_MonitorTracking.dir/main.cpp.obj"
+  "C:/Users/Nguye/CLionProjects/SPV_MonitorTracking/main.cpp" "C:/Users/Nguye/CLionProjects/SPV_MonitorTracking/cmake-build-debug/CMakeFiles/SPV_MonitorTracking.dir/main.cpp.obj"
+  "C:/Users/Nguye/CLionProjects/SPV_MonitorTracking/modules/interest_rate_conversions.cpp" "C:/Users/Nguye/CLionProjects/SPV_MonitorTracking/cmake-build-debug/CMakeFiles/SPV_MonitorTracking.dir/modules/interest_rate_conversions.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
