@@ -1,5 +1,6 @@
+#include <cmath>
 #include <iostream>
-#include <list>
+
 
 class interest_rate {
 private:
@@ -11,15 +12,60 @@ private:
 public:
 
     // constructor
-    interest_rate(float rate, std::string input, std::string output, float periods) {
+
+
+    interest_rate(float rate, std::string input , std::string output, float periods) {
         Interest_Rate = rate;
         Input_Type = input;
         Output_Type = output;
         Periods_Until_Maturity = periods;
     }
 
-    // functions
+    // conversion functions
+    float apr_to_apr() {
+        if (Input_Type == "APR" and Output_Type == "APR")
+        {
+            return Interest_Rate;
+        }
+    }
+
+    float apr_to_apy() {
+        if (Input_Type == "APR" and Output_Type == "APY")
+        {
+            return (1 + Interest_Rate/Periods_Until_Maturity) * Periods_Until_Maturity - 1;
+        }
+    }
+
+    float apr_to_acr() {
+        if (Input_Type == "APR" and Output_Type == "ACR")
+        {
+            float apy_rate = (1 + Interest_Rate/Periods_Until_Maturity) * Periods_Until_Maturity - 1;
+            return std::log(1 + apy_rate) * Periods_Until_Maturity;
+        }
+    }
+
+    // getter and setters
+    void setOutputRate(std:: string output) {
+        Input_Type = output;
+    }
+
+    void setInputRate(std::string input) {
+        Input_Type = input;
+    }
+
+    void getInputRate() {
+        std::cout << Input_Type;
+    }
+
+    void getOutputRate() {
+        std::cout << Output_Type;
+    }
 
 
 
 };
+
+int main() {
+    interest_rate Rate1(0.25, "APR", "APR", 2);
+    std::cout << "Hello world" << std::endl;
+}
