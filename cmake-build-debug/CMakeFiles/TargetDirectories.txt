@@ -1,3 +1,0 @@
-D:/SPV_MonitorTracking2/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/SPV_MonitorTracking2/cmake-build-debug/CMakeFiles/SPV_MonitorTracking.dir
-D:/SPV_MonitorTracking2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
