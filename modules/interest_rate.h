@@ -2,6 +2,7 @@
 #define SPV_MONITORTRACKING_INTEREST_RATE_H
 
 #endif //SPV_MONITORTRACKING_INTEREST_RATE_H
+
 #include <cmath>
 #include <iostream>
 
@@ -17,7 +18,7 @@ public:
 
     // setter and getter
 
-    float getInterestRate() const {
+    [[nodiscard]] float getInterestRate() const {
         return Interest_Rate;
     }
 
@@ -25,7 +26,7 @@ public:
         Interest_Rate = interestRate;
     }
 
-    float getPeriodsUntilMaturity() const {
+    [[nodiscard]] float getPeriodsUntilMaturity() const {
         return Periods_Until_Maturity;
     }
 
@@ -33,7 +34,7 @@ public:
         Periods_Until_Maturity = periodsUntilMaturity;
     }
 
-    const std::string &getInputType() const {
+    [[nodiscard]] const std::string &getInputType() const {
         return Input_Type;
     }
 
@@ -41,7 +42,7 @@ public:
         Input_Type = inputType;
     }
 
-    const std::string &getOutputType() const {
+    [[nodiscard]] const std::string &getOutputType() const {
         return Output_Type;
     }
 
@@ -83,5 +84,36 @@ public:
             return std::log(1 + apy_rate) * Periods_Until_Maturity;
         }
     }
+
+    float apy_to_apr() {
+        if (Input_Type == "APY" and Output_Type == "APR")
+        {
+            return (pow(1 + Interest_Rate, 1/Periods_Until_Maturity) - 1) * Periods_Until_Maturity;
+        }
+    }
+
+    float apy_to_acr() {
+        if (Input_Type == "APY" and Output_Type == "ACR")
+        {
+            return Periods_Until_Maturity * log(1 + (Interest_Rate/Periods_Until_Maturity));
+        }
+    }
+
+    float acr_to_apy() {
+        if (Input_Type == "ACR" and Output_Type == "APY")
+        {
+            return Periods_Until_Maturity * (exp(Interest_Rate/Periods_Until_Maturity) - 1);
+        }
+    }
+
+    float acr_apr() {
+        if (Input_Type == "ACR" and Output_Type == "APR") {
+            float result = acr_to_apy();
+            return (pow(result + 1, 1/Periods_Until_Maturity) - 1) * Periods_Until_Maturity;
+
+        }
+    }
+
+
 
 };
