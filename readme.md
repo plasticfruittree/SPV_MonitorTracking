@@ -57,7 +57,7 @@ The main aim of this project is to build a web application with dashboard to mon
 ### 1.5 SIGNIFICANCE OF THE PROJECT
 
 This platform will remove the bottlenecks of Excel files. It makes monitoring and altering pools more easily while alerting all parties. The platform is profitable
-since it value add for all parties.  
+since it provide value for all parties involved. 
 
 [How a loan pool works](https://docs.oracle.com/cd/E86273_01/html/SZ/SZ02_Overview.htm)
 
