@@ -45,27 +45,11 @@ public:
     }
 
     // getter and setters
-    void setOutputRate(std:: string output) {
-        Input_Type = output;
-    }
-
-    void setInputRate(std::string input) {
-        Input_Type = input;
-    }
-
-    void getInputRate() {
-        std::cout << Input_Type;
-    }
-
-    void getOutputRate() {
-        std::cout << Output_Type;
-    }
-
 
 
 };
 
 int main() {
-    interest_rate Rate1(0.25, "APR", "APR", 2);
+
     std::cout << "Hello world" << std::endl;
 }
