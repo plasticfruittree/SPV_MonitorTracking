@@ -1,3 +1,7 @@
+#ifndef SPV_MONITORTRACKING_INTEREST_RATE_H
+#define SPV_MONITORTRACKING_INTEREST_RATE_H
+
+#endif //SPV_MONITORTRACKING_INTEREST_RATE_H
 #include <cmath>
 #include <iostream>
 
@@ -11,8 +15,43 @@ private:
 
 public:
 
-    // constructor
+    // setter and getter
 
+    float getInterestRate() const {
+        return Interest_Rate;
+    }
+
+    void setInterestRate(float interestRate) {
+        Interest_Rate = interestRate;
+    }
+
+    float getPeriodsUntilMaturity() const {
+        return Periods_Until_Maturity;
+    }
+
+    void setPeriodsUntilMaturity(float periodsUntilMaturity) {
+        Periods_Until_Maturity = periodsUntilMaturity;
+    }
+
+    const std::string &getInputType() const {
+        return Input_Type;
+    }
+
+    void setInputType(const std::string &inputType) {
+        Input_Type = inputType;
+    }
+
+    const std::string &getOutputType() const {
+        return Output_Type;
+    }
+
+    void setOutputType(const std::string &outputType) {
+        Output_Type = outputType;
+    }
+
+
+
+    // constructor
 
     interest_rate(float rate, std::string input , std::string output, float periods) {
         Interest_Rate = rate;
@@ -22,6 +61,7 @@ public:
     }
 
     // conversion functions
+
     float apr_to_apr() {
         if (Input_Type == "APR" and Output_Type == "APR")
         {
@@ -44,12 +84,4 @@ public:
         }
     }
 
-    // getter and setters
-
-
 };
-
-int main() {
-
-    std::cout << "Hello world" << std::endl;
-}
