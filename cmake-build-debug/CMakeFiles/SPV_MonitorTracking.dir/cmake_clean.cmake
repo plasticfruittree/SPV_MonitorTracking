@@ -3,8 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SPV_MonitorTracking.dir/modules/interest_rate_conversions.cpp.obj"
   "SPV_MonitorTracking.exe"
   "SPV_MonitorTracking.exe.manifest"
-  "SPV_MonitorTracking.lib"
   "SPV_MonitorTracking.pdb"
+  "libSPV_MonitorTracking.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
