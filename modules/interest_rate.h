@@ -52,7 +52,7 @@ public:
 
 
 
-    // constructor
+    // constructor ---------------------------------------------------------------------------------
 
     interest_rate(float rate, std::string input , std::string output, float periods) {
         Interest_Rate = rate;
@@ -61,20 +61,24 @@ public:
         Periods_Until_Maturity = periods;
     }
 
-    // conversion functions
+    // conversion functions --------------------------------------------------------------------------
 
     float apr_to_apr() {
         if (Input_Type == "APR" and Output_Type == "APR")
         {
             return Interest_Rate;
+
         }
+        else return -1;
     }
 
     float apr_to_apy() {
         if (Input_Type == "APR" and Output_Type == "APY")
         {
             return (1 + Interest_Rate/Periods_Until_Maturity) * Periods_Until_Maturity - 1;
+
         }
+        else return -1;
     }
 
     float apr_to_acr() {
@@ -83,37 +87,44 @@ public:
             float apy_rate = (1 + Interest_Rate/Periods_Until_Maturity) * Periods_Until_Maturity - 1;
             return std::log(1 + apy_rate) * Periods_Until_Maturity;
         }
+        else return -1;
     }
 
     float apy_to_apr() {
         if (Input_Type == "APY" and Output_Type == "APR")
         {
             return (pow(1 + Interest_Rate, 1/Periods_Until_Maturity) - 1) * Periods_Until_Maturity;
+
         }
+        else return -1;
     }
 
     float apy_to_acr() {
         if (Input_Type == "APY" and Output_Type == "ACR")
         {
             return Periods_Until_Maturity * log(1 + (Interest_Rate/Periods_Until_Maturity));
+
         }
+        else return -1;
     }
 
     float acr_to_apy() {
         if (Input_Type == "ACR" and Output_Type == "APY")
         {
             return Periods_Until_Maturity * (exp(Interest_Rate/Periods_Until_Maturity) - 1);
+
         }
+        else return -1;
     }
 
-    float acr_apr() {
+    float acr_to_apr() {
         if (Input_Type == "ACR" and Output_Type == "APR") {
             float result = acr_to_apy();
             return (pow(result + 1, 1/Periods_Until_Maturity) - 1) * Periods_Until_Maturity;
 
+
         }
+        else return -1;
     }
-
-
 
 };
