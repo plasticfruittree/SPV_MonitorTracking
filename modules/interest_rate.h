@@ -66,70 +66,18 @@ public:
 
     // conversion functions --------------------------------------------------------------------------
 
-    float apr_to_apr() {
-        if (Input_Type == "APR" and Output_Type == "APR")
-        {
-            return Interest_Rate;
-
-        }
-        else return -1;
-    }
-
-    float apr_to_apy() {
-        if (Input_Type == "APR" and Output_Type == "APY")
-        {
-            return (1 + Interest_Rate / Periods) * Periods - 1;
-
-        }
-        else return -1;
-    }
-
-    float apr_to_acr() {
-        if (Input_Type == "APR" and Output_Type == "ACR")
-        {
-            float apy_rate = (1 + Interest_Rate / Periods) * Periods - 1;
-            return std::log(1 + apy_rate) * Periods;
-        }
-        else return -1;
-    }
-
-    float apy_to_apr() {
-        if (Input_Type == "APY" and Output_Type == "APR")
-        {
-            return (pow(1 + Interest_Rate, 1 / Periods) - 1) * Periods;
-
-        }
-        else return -1;
-    }
-
-    float apy_to_acr() {
-        if (Input_Type == "APY" and Output_Type == "ACR")
-        {
-            return Periods * log(1 + (Interest_Rate / Periods));
-
-        }
-        else return -1;
-    }
-
-    float acr_to_apy() {
-        if (Input_Type == "ACR" and Output_Type == "APY")
-        {
-            return Periods * (exp(Interest_Rate / Periods) - 1);
-
-        }
-        else return -1;
-    }
-
-    float acr_to_apr() {
-        if (Input_Type == "ACR" and Output_Type == "APR") {
-            float result = acr_to_apy();
-            return (pow(result + 1, 1 / Periods) - 1) * Periods;
 
 
-        }
-        else return -1;
-    }
 
+
+};
+
+class MoneyMarket : public InterestRate {
+private:
+    float present_value, addon_rate, days_until_maturity;
+    int days_in_year;
+
+public:
 
 
 };
@@ -144,7 +92,7 @@ void help_periods() {
     std::cout << "---------------" << std::endl;
 
     for (std::string type: period_type) {
-        std::cout << "\n" << type << std::endl;
+        std::cout << type << std::endl;
 
     }
 }
