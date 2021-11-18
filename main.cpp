@@ -1,9 +1,9 @@
 #include <iostream>
 #include "modules/interest_rate.h"
+#include "modules/InterestRateConversion.h"
 
+using namespace std;
 
 int main() {
 
-    InterestRate Rate1 (0.10, "APR", "APY", 2);
-    std::cout << Rate1.apr_to_apy();
 }

@@ -71,4 +71,7 @@ This is an educational project to learning different technologies so getting MVC
 
 An interest rate class was made to convert interest rate into APR- Annual Percent Rate, APY - Annual Percentage Yield,
 ACR - Annual Continuous Rate from the three listed above. By converting the interest rate into ACR, the calculations 
-for compounding and discounting will be simplier for numerous financial instruments. 
+for compounding and discounting will be simpler for numerous financial instruments. 
+
+I will build it carefully and test the results and see how I should organize the class structure because the rates will 
+tie into multiple classes.
