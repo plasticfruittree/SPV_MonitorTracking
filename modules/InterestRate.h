@@ -59,21 +59,34 @@ private:
     double Present_value;
     double Future_value;
     double Days_in_year;
+    double Days_til_maturity
 
 
 public:
     // constructors
-    MoneyMarketRate(double value, double addon_rate, double days) {
+    MoneyMarketRate(double value, double addon_rate, double days_in_year, double days_til_maturity) {
         Present_value = value;
         Future_value = value;
         Addon_rate = addon_rate;
         Discount_rate = addon_rate;
-        Days_in_year = days;
+        Days_in_year = days_in_year;
+        Days_til_maturity = days_til_maturity;
+
+    }
+
+    double annualized_period() {
+        return days_til_maturity/day_in_year;
     }
 
     double Addon_fv()
     {
-        return present_value + (present_value + addon)
+        Future_value =  present_value + (present_value * addon_rate * annualized_period);
+        return Future_value;
+    }
+
+    double Addon_pv()
+    {
+        Present_Value = Future_value / (1 + (Addon_rate * Addon_rate))
     }
 
 
