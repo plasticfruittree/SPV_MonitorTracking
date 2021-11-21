@@ -1,9 +1,9 @@
 #include <iostream>
-#include "modules/interest_rate.h"
-#include "modules/InterestRateConversion.h"
+#include "modules/InterestRate.h"
+
 
 using namespace std;
 
 int main() {
-
+    cout << "Hello, world" << endl;
 }

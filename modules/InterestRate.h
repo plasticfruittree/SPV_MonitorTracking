@@ -1,4 +1,5 @@
 #include <string>
+#include <cmath>
 
 #ifndef SPV_MONITORTRACKING_INTERESTRATE_H
 #define SPV_MONITORTRACKING_INTERESTRATE_H
@@ -10,6 +11,7 @@ class InterestRate {
 private:
     double Rate;
     double Period;
+    string type;
 
 
 public:
@@ -39,60 +41,51 @@ public:
         Period = period;
     }
 
+    const string &getType() const {
+        return type;
+    }
+
+    void setType(const string &type) {
+        InterestRate::type = type;
+    }
+
 
     // function
 
-    double mrate_to_acr(double rate, double period) {
+    double mrate_to_acr(double rate, double period)
+    {
+        setType("ACR");
         return period * log(1+ (rate/period));
     }
 
-    double acr_to_mrate(double rate, double period) {
+    double acr_to_mrate(double rate, double period)
+    {
+        setType("Compound Period");
         return period * (exp(rate/period) - 1);
     }
 
 };
 
-class MoneyMarketRates: public InterestRate {
+class MoneyMarketRate{
 private:
-    double Addon_rate;
-    double Discount_rate;
-    double Present_value;
-    double Future_value;
-    double Days_in_year;
-    double Days_til_maturity
+    //different rates
+    double Addon_rate, Discount_rate;
+
+    //future and present values
+    double Present_value, Future_value;
+
+    // annualized period
+    double Days_in_year, Days_til_maturity;
+    double annualized_period;
 
 
 public:
+
     // constructors
-    MoneyMarketRate(double value, double addon_rate, double days_in_year, double days_til_maturity) {
-        Present_value = value;
-        Future_value = value;
-        Addon_rate = addon_rate;
-        Discount_rate = addon_rate;
-        Days_in_year = days_in_year;
-        Days_til_maturity = days_til_maturity;
-
-    }
-
-    double annualized_period() {
-        return days_til_maturity/day_in_year;
-    }
-
-    double Addon_fv()
+    MoneyMarketRate(double rate, double value, double days_in_year, double days_til_maturity)
     {
-        Future_value =  present_value + (present_value * addon_rate * annualized_period);
-        return Future_value;
+
     }
-
-    double Addon_pv()
-    {
-        Present_Value = Future_value / (1 + (Addon_rate * Addon_rate))
-    }
-
-
-
-
-
 
 
 

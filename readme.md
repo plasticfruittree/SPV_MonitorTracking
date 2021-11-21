@@ -73,4 +73,7 @@ An interest rate class was made to convert interest rate into APR- Annual Percen
 ACR - Annual Continuous Rate from the three listed above. By converting the interest rate into ACR, the calculations 
 for compounding and discounting will be simpler for numerous financial instruments. 
 
-An interest rate class was made with just a rate and period. 
+An interest rate class was made with just a rate and period. This is the most basic class that calculates a continuously 
+compounded rate and m compounding period rate. Additions for the class will be implemented later.
+
+An money market interest rate class was created because money market instruments are quoted differently. 
